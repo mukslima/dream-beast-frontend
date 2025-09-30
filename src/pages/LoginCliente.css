@@ -1,11 +1,15 @@
 /* Container geral */
 .login-container {
   min-height: 100vh;
+  width: 100vw; /* Garante largura total */
   display: flex;
+  flex-direction: column; /* Alinha em coluna */
   justify-content: center;
   align-items: center;
-  background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
-  padding: 1rem;
+  background: #fff; /* Fundo branco */
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* Card central */
@@ -15,21 +19,49 @@
   width: 100%;
   max-width: 400px;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(196, 196, 196, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 60px;   
+  margin-bottom: 70px;  
 }
 
 /* Logo */
-.login-logo {
-  width: 120px;
-  margin-bottom: 1rem;
+.logo-header {
+  width: 60px;
+  margin-bottom: 0;
+}
+
+/* Footer e Header */
+.header {
+  width: 100vw;
+  background: #FF746C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.footer {
+  width: 100vw;
+  background: #FF746C;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
 
 /* Título */
 .login-title {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   margin-bottom: 1.5rem;
   text-align: center;
   color: #333;
@@ -61,11 +93,14 @@
   font-size: 1rem;
   outline: none;
   transition: border 0.2s;
+  background: #fff;
 }
 
 .form-group input:focus {
   border-color: #ff6b6b;
 }
+
+
 
 /* Botão */
 .login-btn {

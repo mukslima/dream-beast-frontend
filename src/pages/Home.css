@@ -1,40 +1,53 @@
 .home-container {
   min-height: 100vh;
+  width: 100vw; /* Garante que ocupe toda a largura */
   display: flex;
-  flex-direction: row; /* Desktop: elementos lado a lado */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
-  padding: 4rem 2rem;
+  background: #fff;
+  padding: 0; /* Remove padding para ocupar toda a tela */
   box-sizing: border-box;
-  gap: 4rem; /* Espaço entre colunas */
+  gap: 2rem;
+  overflow-x: hidden; /* Evita scroll horizontal */
 }
 
 .home-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   max-width: 500px;
+  margin-top: 60px; /* Espaço para o header fixo */
 }
 
 .home-logo {
-  width: 220px;
-  margin-bottom: 2rem;
+  width: 60px;
+  margin-bottom: 0;
+}
+
+.home-logo-home {
+  width: 200px;
+  margin-bottom: -6rem;
 }
 
 .home-text {
   font-size: 1.3rem;
   margin-bottom: 1rem;
   color: #000;
-  text-align: left;
+  text-align: center;
   max-width: 700px;
+  width: 100%;
+  font-weight: bold; /* Negrito */
 }
 
 .home-subtext {
   font-size: 1.1rem;
-  color: rgba(0,0,0,0.5); /* Preto com 50% de opacidade */
+  color: rgba(0,0,0,0.5);
   margin-bottom: 2rem;
-  text-align: left;
+  text-align: center;
+  width: 100%;
 }
 
 .home-btn {
@@ -45,7 +58,7 @@
   text-decoration: none;
   font-weight: bold;
   transition: background 0.2s;
-  margin-top: 2rem;
+  margin-top: 10rem;
   font-size: 1.1rem;
   border: none;
   cursor: pointer;
@@ -57,22 +70,15 @@
 
 /* Responsivo para tablets e mobile */
 @media (max-width: 900px) {
-  .home-container {
-    flex-direction: column;
-    padding: 2rem 1rem;
-    gap: 2rem;
-  }
   .home-logo {
     width: 150px;
     margin-bottom: 1rem;
   }
   .home-content {
-    align-items: center;
     max-width: 100%;
   }
   .home-text,
   .home-subtext {
-    text-align: center;
     max-width: 500px;
   }
   .home-btn {
