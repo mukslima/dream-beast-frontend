@@ -1,0 +1,168 @@
+.login-header {
+  width: 100vw;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem 0 1rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.login-logo {
+  height: 70px;
+}
+
+.login-container {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.login-card {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(196, 196, 196, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 100px;
+  margin-bottom: 60px;
+}
+
+.login-title {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #111;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 1.1;
+}
+
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: #222;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fff;
+  color: #111;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  transition: border 0.2s;
+}
+
+.form-group input:focus {
+  border: 1.5px solid #5a54c6;
+}
+
+.senha-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.senha-group input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.senha-olho {
+  position: absolute;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.login-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.lembre-me {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem; /* aumenta o espaço entre checkbox e texto */
+  font-size: 1rem;
+}
+
+.lembre-me input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #5a54c6;
+  margin: 0;
+  vertical-align: middle; /* garante alinhamento vertical */
+}
+
+.esqueci-senha {
+  background: none;
+  border: none;
+  color: #222;
+  text-decoration: underline;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.login-btn {
+  background-color: #5a54c6;
+  color: #fff;
+  padding: 1rem 0;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(90, 84, 198, 0.18);
+  transition: background 0.2s;
+}
+
+.login-btn:hover {
+  background-color: #443e9e;
+}
+
+@media (min-width: 768px) {
+  .login-logo {
+    width: 150px;
+  }
+  .login-form {
+    max-width: 400px;
+  }
+}
