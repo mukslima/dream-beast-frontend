@@ -1,0 +1,72 @@
+.perfil-container {
+  min-height: 100vh;
+  width: 100vw;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.perfil-main {
+  width: 100%;
+  max-width: 400px;
+  margin: 110px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.perfil-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #eee;
+  object-fit: cover;
+}
+
+.perfil-nome {
+  font-size: 1.2rem;
+  color: #FF746C;
+  font-weight: bold;
+  text-align: center;
+}
+
+.perfil-curso {
+  font-size: 1rem;
+  color: #FF746C;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.perfil-btn {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.8rem 0;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  background: #fff;
+  color: #FF746C;
+  transition: background 0.2s;
+}
+
+.perfil-confirmar {
+  color: #FF746C;
+  background: #fff;
+}
+
+.perfil-cancelar {
+  color: #FF746C;
+  background: #fff;
+}
+
+.perfil-voltar {
+  background: #FF746C;
+  color: #fff;
+  margin-top: 1rem;
+}
