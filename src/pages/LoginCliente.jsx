@@ -10,7 +10,7 @@ function LoginCliente() {
       </header>
       
       <div className="login-card">
-        <h1 className="login-title">BEM VINDO <br /> SONHADOR</h1>
+        <h1 className="login-title">BEM VINDO <br /> REALIZADOR</h1>
         <form className="login-form">
           <div className="form-group">
             <label htmlFor="nome">Nome</label>
