@@ -1,0 +1,220 @@
+.lista-container {
+  min-height: 100vh;
+  width: 100vw;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.lista-header {
+  width: 100vw;
+  background: #FF746C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem 0 1rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.lista-logo {
+  height: 48px;
+}
+
+.lista-main {
+  width: 100%;
+  max-width: 400px;
+  margin: 110px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lista-pesquisa {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.lista-label {
+  display: block;
+  font-size: 1rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.lista-input-group {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  border: 1px solid #eee;
+  padding: 0.5rem 1rem;
+}
+
+.lista-lupa {
+  font-size: 1.2rem;
+  color: #FF746C;
+  margin-right: 0.5rem;
+}
+
+.lista-input-group input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  width: 100%;
+  color: #222;
+}
+
+.lista-formandos-lista {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 0;
+}
+
+.lista-formando-card {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 0.7rem 1.2rem;
+  gap: 1rem;
+}
+
+.lista-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #eee;
+  object-fit: cover;
+}
+
+.lista-nome {
+  font-size: 1rem;
+  color: #FF746C;
+  font-weight: 500;
+}
+
+.lista-footer {
+  width: 100vw;
+  background: #FF746C;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+  .lista-main {
+    max-width: 98vw;
+    margin-top: 90px;
+  }
+  .lista-formando-card {
+    padding: 0.6rem 0.7rem;
+    gap: 0.7rem;
+  }
+  .lista-avatar {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.lista-formandos {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.lista-formandos h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.barra-pesquisa {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.barra-pesquisa input {
+  width: 80%;
+  max-width: 400px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.tabela-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #f5f5f5;
+  text-align: left;
+  padding: 0.75rem;
+}
+
+td {
+  padding: 0.75rem;
+  border-top: 1px solid #eee;
+}
+
+.status-ok {
+  color: green;
+  font-weight: bold;
+}
+
+.status-pendente {
+  color: orange;
+  font-weight: bold;
+}
+
+button {
+  padding: 0.4rem 0.7rem;
+  margin-right: 0.3rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn-ver {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-editar {
+  background-color: #28a745;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  th, td {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+
+  .barra-pesquisa input {
+    width: 100%;
+  }
+}

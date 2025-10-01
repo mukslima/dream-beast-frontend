@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import LoginCliente from './pages/LoginCliente'
 import LoginAdmin from './pages/LoginAdmin'
 import CadastroFormando from './pages/CadastroFormando'
+import ListaFormandos from './pages/ListaFormados'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/login-cliente" element={<LoginCliente />} />
         <Route path="/login-admin" element={<LoginAdmin />} />
         <Route path="/cadastro-formando" element={<CadastroFormando />} />
+        <Route path="/lista-formandos" element={<ListaFormandos />} />
         <Route path="*" element={<h1>Página não encontrada 😅</h1>} />
       </Routes>
     </BrowserRouter>
