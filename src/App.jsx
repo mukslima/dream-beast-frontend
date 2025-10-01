@@ -5,7 +5,8 @@ import LoginCliente from './pages/LoginCliente'
 import LoginAdmin from './pages/LoginAdmin'
 import CadastroFormando from './pages/CadastroFormando'
 import ListaFormandos from './pages/ListaFormados'
-import PerfilConfirmar from './pages/PerfilConfirmar' 
+import PerfilConfirmar from './pages/PerfilConfirmar'
+import CadastroPessoa from './pages/CadastroPessoa'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/cadastro-formando" element={<CadastroFormando />} />
         <Route path="/lista-formandos" element={<ListaFormandos />} />
         <Route path="/formando/:id" element={<PerfilConfirmar />} /> {/* Rota dinâmica */}
+        <Route path="/formando/:id/cadastro-pessoa" element={<CadastroPessoa />} />
         <Route path="*" element={<h1>Página não encontrada 😅</h1>} />
       </Routes>
     </BrowserRouter>

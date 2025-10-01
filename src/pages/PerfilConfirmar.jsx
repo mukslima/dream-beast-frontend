@@ -54,13 +54,17 @@ export default function PerfilConfirmar() {
         <img src={avatar} alt="Avatar" className="perfil-avatar" />
         <div className="perfil-nome">{formando.nome}</div>
         <div className="perfil-curso">{formando.curso}</div>
-        <button className="perfil-btn perfil-confirmar">Confirmar</button>
-        <button className="perfil-btn perfil-cancelar">Cancelar</button>
+        <button 
+        className="perfil-btn perfil-confirmar" 
+        onClick={() => navigate(`/formando/${formando.id}/cadastro-pessoa`)}
+        >
+            Confirmar
+        </button>
         <button
           className="perfil-btn perfil-voltar"
           onClick={() => navigate(-1)}
         >
-          Voltar
+          Cancelar
         </button>
       </main>
       <footer className="lista-footer">
