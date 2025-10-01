@@ -9,9 +9,9 @@ export default function ListaFormandos() {
 
   const formandos = [
     { id: 1, nome: "Fernanda Gomes" },
-    { id: 2, nome: "Nome e Sobrenome" },
-    { id: 3, nome: "Nome e Sobrenome" },
-    { id: 4, nome: "Nome e Sobrenome" },
+    { id: 2, nome: "Carlos Rangel" },
+    { id: 3, nome: "Marcos AND Lima" },
+    { id: 4, nome: "Deivid SP" },
     { id: 5, nome: "Nome e Sobrenome" },
     { id: 6, nome: "Nome e Sobrenome" },
     { id: 7, nome: "Nome e Sobrenome" },
