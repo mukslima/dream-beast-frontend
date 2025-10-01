@@ -49,7 +49,7 @@ function LoginCliente() {
               Lembre-me
             </label>
           </div>
-          <button type="submit" className="login-btn">
+          <button type="submit" className="login-btn-client">
             Entrar
           </button>
         </form>

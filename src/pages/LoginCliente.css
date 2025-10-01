@@ -103,7 +103,7 @@
 
 
 /* Botão */
-.login-btn {
+.login-btn-client {
   margin-top: 0.5rem;
   background-color: #ff6b6b;
   color: #fff;
@@ -116,7 +116,7 @@
   transition: background 0.2s;
 }
 
-.login-btn:hover {
+.login-btn-client:hover {
   background-color: #ff4b4b;
 }
 
