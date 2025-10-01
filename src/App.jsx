@@ -7,6 +7,7 @@ import CadastroFormando from './pages/CadastroFormando'
 import ListaFormandos from './pages/ListaFormados'
 import PerfilConfirmar from './pages/PerfilConfirmar'
 import CadastroPessoa from './pages/CadastroPessoa'
+import Detalhes from './pages/Detalhes'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/lista-formandos" element={<ListaFormandos />} />
         <Route path="/formando/:id" element={<PerfilConfirmar />} /> {/* Rota dinâmica */}
         <Route path="/formando/:id/cadastro-pessoa" element={<CadastroPessoa />} />
+        <Route path="/formando/:id/detalhes" element={<Detalhes />} />
         <Route path="*" element={<h1>Página não encontrada 😅</h1>} />
       </Routes>
     </BrowserRouter>

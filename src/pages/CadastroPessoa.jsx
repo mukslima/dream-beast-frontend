@@ -1,12 +1,20 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import logob from "../assets/logob.svg";
 import maisfoto from "../assets/maisfoto.svg";
 import "./CadastroPessoa.css";
 
 export default function CadastroPessoa() {
   const { id } = useParams();
+  const navigate = useNavigate();
 
-  // Exemplo de lista de formandos (substitua por fetch se é necessario)
+  const [formData, setFormData] = useState({
+    nome: "",
+    telefone: "",
+    email: "",
+  });
+
+  // Exemplo de lista de formandos (substitua por fetch se for necessário)
   const formandos = [
     { id: "1", nome: "Fernanda Gomes", curso: "Direito - UFRJ" },
     { id: "2", nome: "Carlos Rangel", curso: "Engenharia - UFF" },
@@ -18,13 +26,10 @@ export default function CadastroPessoa() {
     { id: "8", nome: "Nome e Sobrenome", curso: "Medicina - UFRJ" },
     { id: "9", nome: "Nome e Sobrenome", curso: "Medicina - UFRJ" },
     { id: "10", nome: "Nome e Sobrenome", curso: "Medicina - UFRJ" },
-    // ...adicione mais se quiser
   ];
 
-  // Busque o formando pelo id
   const formando = formandos.find(f => f.id === id);
 
-  // Se não encontrar, mostre mensagem de erro ou redirecione
   if (!formando) {
     return (
       <div className="cadastro-pessoa-container">
@@ -43,6 +48,25 @@ export default function CadastroPessoa() {
     );
   }
 
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!formData.nome || !formData.telefone) {
+      alert("Por favor, preencha nome e telefone.");
+      return;
+    }
+
+    // Armazena os dados no localStorage (se quiser usar depois)
+    localStorage.setItem("dadosPessoa", JSON.stringify(formData));
+
+    // Redireciona para a tela de detalhes com o mesmo ID
+    navigate(`/formando/${id}/detalhes`);
+  };
+
   return (
     <div className="cadastro-pessoa-container">
       <header className="cadastro-pessoa-header">
@@ -59,21 +83,41 @@ export default function CadastroPessoa() {
           <span>Seleciona foto</span>
           <img src={maisfoto} alt="Selecionar foto" className="cadastro-pessoa-foto-img" />
         </div>
-        <form className="cadastro-pessoa-form">
+        <form className="cadastro-pessoa-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Nome</label>
-            <input type="text" placeholder="Digite a nome" required />
+            <input
+              type="text"
+              name="nome"
+              placeholder="Digite o nome"
+              value={formData.nome}
+              onChange={handleChange}
+              required
+            />
           </div>
           <div className="form-group">
             <label>Telefone</label>
-            <input type="text" placeholder="Coloque o telefone" required />
+            <input
+              type="text"
+              name="telefone"
+              placeholder="Coloque o telefone"
+              value={formData.telefone}
+              onChange={handleChange}
+              required
+            />
           </div>
           <div className="form-group">
             <label>Email (Opcional)</label>
-            <input type="email" placeholder="Entre com email" />
+            <input
+              type="email"
+              name="email"
+              placeholder="Entre com email"
+              value={formData.email}
+              onChange={handleChange}
+            />
           </div>
           <button type="submit" className="cadastro-pessoa-btn">
-            Entrar
+            Confirmar Cadastro
           </button>
         </form>
       </main>
