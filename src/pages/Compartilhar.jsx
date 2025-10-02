@@ -127,7 +127,7 @@ export default function Compartilhar() {
     );
   }
 
-  const mensagem = `🎓 ${formando.nome} - ${formando.curso}\n📍 ${formando.localizacao}\n💬 Venha deixar sua mensagem!`;
+  const mensagem = ` ${formando.nome} - ${formando.curso}\n Local: ${formando.localizacao}\n - Venha deixar sua mensagem!`;
 
   const handleWhatsapp = () => {
     const url = `https://wa.me/?text=${encodeURIComponent(mensagem)}`;

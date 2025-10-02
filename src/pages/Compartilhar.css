@@ -113,7 +113,8 @@
 
 .compartilhar-whatsapp:hover {
   background: #25d366;
-  color: #fff;
+  color: #ffffff;
+  border: 2px solid #fff;
 }
 
 .compartilhar-whatsapp img {
