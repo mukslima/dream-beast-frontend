@@ -178,7 +178,7 @@
   z-index: 10;
 }
 
-/* Mobile */
+/* Responsivo */
 @media (max-width: 480px) {
   .detalhes-main {
     max-width: 95%;

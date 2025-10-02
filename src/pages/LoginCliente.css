@@ -1,12 +1,11 @@
-/* Container geral */
 .login-container {
   min-height: 100vh;
-  width: 100vw; /* Garante largura total */
+  width: 100vw; 
   display: flex;
-  flex-direction: column; /* Alinha em coluna */
+  flex-direction: column; 
   justify-content: center;
   align-items: center;
-  background: #fff; /* Fundo branco */
+  background: #fff; 
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
@@ -137,7 +136,7 @@
   text-decoration: underline;
 }
 
-/* 📱 Mobile */
+/* Responsivo */
 @media (max-width: 480px) {
   .login-card {
     padding: 1.5rem;

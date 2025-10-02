@@ -141,7 +141,7 @@
   padding: 0;
 }
 
-.login-btn {
+.login-admin-btn {
   background-color: #5a54c6;
   color: #fff;
   padding: 1rem 0;
@@ -158,6 +158,7 @@
   background-color: #443e9e;
 }
 
+/* Responsivo */
 @media (min-width: 768px) {
   .login-logo {
     width: 150px;

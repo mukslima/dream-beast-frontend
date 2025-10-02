@@ -79,7 +79,7 @@ export default function LoginAdmin() {
               Esqueci minha senha
             </button>
           </div>
-          <button type="submit" className="login-btn">
+          <button type="submit" className="login-admin-btn">
             Entrar
           </button>
         </form>

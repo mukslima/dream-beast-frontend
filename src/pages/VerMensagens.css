@@ -209,6 +209,7 @@ modal-nome {
   font-weight: bold;
 }
 
+/* Responsivo */
 @media (max-width: 480px) {
   .ver-mensagens-main {
     max-width: 98vw;

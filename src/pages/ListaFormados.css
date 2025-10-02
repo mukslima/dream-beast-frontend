@@ -118,22 +118,6 @@
   z-index: 10;
 }
 
-/* Responsivo */
-@media (max-width: 480px) {
-  .lista-main {
-    max-width: 98vw;
-    margin-top: 90px;
-  }
-  .lista-formando-card {
-    padding: 0.6rem 0.7rem;
-    gap: 0.7rem;
-  }
-  .lista-avatar {
-    width: 32px;
-    height: 32px;
-  }
-}
-
 .lista-formandos {
   padding: 2rem;
   max-width: 1000px;
@@ -206,6 +190,22 @@ button {
 .btn-editar {
   background-color: #28a745;
   color: #fff;
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+  .lista-main {
+    max-width: 98vw;
+    margin-top: 90px;
+  }
+  .lista-formando-card {
+    padding: 0.6rem 0.7rem;
+    gap: 0.7rem;
+  }
+  .lista-avatar {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 @media (max-width: 600px) {

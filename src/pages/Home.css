@@ -1,15 +1,15 @@
 .home-container {
   min-height: 100vh;
-  width: 100vw; /* Garante que ocupe toda a largura */
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #fff;
-  padding: 0; /* Remove padding para ocupar toda a tela */
+  padding: 0; 
   box-sizing: border-box;
   gap: 2rem;
-  overflow-x: hidden; /* Evita scroll horizontal */
+  overflow-x: hidden; 
 }
 
 .home-content {
@@ -19,7 +19,7 @@
   justify-content: center;
   width: 100%;
   max-width: 500px;
-  margin-top: 60px; /* Espaço para o header fixo */
+  margin-top: 60px;
 }
 
 .home-logo {
@@ -39,7 +39,7 @@
   text-align: center;
   max-width: 700px;
   width: 100%;
-  font-weight: bold; /* Negrito */
+  font-weight: bold;
 }
 
 .home-subtext {
@@ -50,27 +50,48 @@
   width: 100%;
 }
 
+.home-btns {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem; 
+  justify-content: center; 
+}
+
 .home-btn {
-  background-color: #ff6b6b;
   color: white;
-  padding: 1rem 2.5rem;
+  padding: 1rem 2rem;
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
   transition: background 0.2s;
-  margin-top: 10rem;
   font-size: 1.1rem;
   border: none;
   cursor: pointer;
+  text-align: center; 
 }
 
-.home-btn:hover {
-  background-color: #ff4b4b;
-  text-decoration: none;
-  color: white;
+.login-btn {
+  background-color: #ff6b6b !important; 
+  min-width: 130px;
+  color: #fff !important;
 }
 
-/* Responsivo para tablets e mobile */
+.login-btn:hover {
+  background-color: #ff4b4b !important;
+}
+
+/* Botão Admin */
+.admin-btn {
+  background-color: #575799 !important;
+  min-width: 110px;
+  color: #fff !important;
+}
+
+.admin-btn:hover {
+  background-color: #443e9e !important;
+}
+
+/* Responsivo */
 @media (max-width: 900px) {
   .home-logo {
     width: 150px;

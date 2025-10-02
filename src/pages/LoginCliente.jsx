@@ -1,8 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import './LoginCliente.css'
 import logob from '../assets/logob.svg'
 
 function LoginCliente() {
+  const navigate = useNavigate();
   return (
     <div className="login-container">
       <header className="header">
@@ -10,7 +12,7 @@ function LoginCliente() {
       </header>
       
       <div className="login-card">
-        <h1 className="login-title">BEM VINDO <br /> REALIZADOR</h1>
+        <h1 className="login-title">BEM VINDO <br /> FORMANDOS</h1>
         <form className="login-form">
           <div className="form-group">
             <label htmlFor="nome">Nome</label>
@@ -49,8 +51,11 @@ function LoginCliente() {
               Lembre-me
             </label>
           </div>
-          <button type="submit" className="login-btn-client">
-            Entrar
+          <button 
+              className="login-btn-client" 
+              onClick={() => navigate(`/lista-formandos`)}
+              >
+                  Entrar
           </button>
         </form>
       </div>
