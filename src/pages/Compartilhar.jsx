@@ -1,14 +1,11 @@
 import { useParams, useNavigate } from "react-router-dom";
 import logob from "../assets/logob.svg";
-import maisfoto from "../assets/maisfoto.svg";
-import "./Detalhes.css";
+import "./Compartilhar.css";
 
-export default function Detalhes() {
+export default function Compartilhar() {
   const { id } = useParams();
-
   const navigate = useNavigate();
 
-  // Exemplo de lista de formandos (substitua por fetch se for necessário)
   const formandos = [
     {
       id: "1",
@@ -112,71 +109,58 @@ export default function Detalhes() {
     },
     // ...demais formandos
   ];
-
   const formando = formandos.find((f) => f.id === id);
 
   if (!formando) {
     return (
-      <div className="detalhes-container">
-        <header className="detalhes-header">
-          <img src={logob} alt="Dream Beast" className="detalhes-logo" />
+      <div className="compartilhar-container">
+        <header className="compartilhar-header">
+          <img src={logob} alt="Dream Beast" className="compartilhar-logo" />
         </header>
-        <main className="detalhes-main">
-          <div className="detalhes-alert">Formando não encontrado.</div>
+        <main className="compartilhar-main">
+          <div className="compartilhar-alert">Formando não encontrado.</div>
         </main>
-        <footer className="detalhes-footer">
+        <footer className="compartilhar-footer">
           © 2025 Powered by Dream Best
         </footer>
       </div>
     );
   }
 
+  const mensagem = `🎓 ${formando.nome} - ${formando.curso}\n📍 ${formando.localizacao}\n💬 Venha deixar sua mensagem!`;
+
+  const handleWhatsapp = () => {
+    const url = `https://wa.me/?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, "_blank");
+  };
+
   return (
-    <div className="detalhes-container">
-      <header className="detalhes-header">
-        <img src={logob} alt="Dream Beast" className="detalhes-logo" />
+    <div className="compartilhar-container">
+      <header className="compartilhar-header">
+        <img src={logob} alt="Dream Beast" className="compartilhar-logo" />
       </header>
 
-      <main className="detalhes-main">
-        <div className="detalhes-info">
-          <h1 className="detalhes-nome">{formando.nome}</h1>
-          <p className="detalhes-curso">{formando.curso}</p>
+      <main className="compartilhar-main">
+        <div className="compartilhar-info">
+          <h1 className="compartilhar-nome">{formando.nome}</h1>
+          <p className="compartilhar-curso">{formando.curso}</p>
+          <p className="compartilhar-localizacao">{formando.localizacao}</p>
 
-          <div className="detalhes-data-local">
-            <p className="detalhes-localizacao">{formando.localizacao}</p>
-            <p className="detalhes-dia-hora">{formando.diaHora}</p>
-
-            <a
-              href={formando.mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="detalhes-maps-btn"
-            >
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/2886/2886372.png"
-                alt="Google Maps"
-              />
-              Ver Localização
-            </a>
-          </div>
-        </div>
-        <div className="detalhes-mensagem">
-          <label for="mensagem">Sua Mensagem:</label>
-          <textarea id="mensagem" name="mensagem" rows="5" cols="30" placeholder="Digite sua mensagem aqui"></textarea>
-        </div>
-        <div className="detalhes-btn-group">
-          <button type="button">Enviar Mensagem</button>
-          <button type="button">Ver Mensagens</button>
-           <button 
-              className="detalhes-btn detalhes-compartilhar" 
-              onClick={() => navigate(`/formando/${formando.id}/compartilhar`)}
-              >
-                  Compartilhar
+          <button className="compartilhar-whatsapp" onClick={handleWhatsapp}>
+            <img
+              src="https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-whatsapp-mobile-software-icon-png-image_6315991.png"
+              alt="WhatsApp"
+            />
+            Compartilhar por WhatsApp
           </button>
+        </div>
+
+        <div className="compartilhar-voltar">
+          <button onClick={() => navigate(-1)}>Voltar</button>
         </div>
       </main>
 
-      <footer className="detalhes-footer">
+      <footer className="compartilhar-footer">
         © 2025 Powered by Dream Best
       </footer>
     </div>

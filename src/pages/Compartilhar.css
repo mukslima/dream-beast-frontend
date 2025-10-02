@@ -1,0 +1,175 @@
+.compartilhar-container {
+  min-height: 100vh;
+  width: 100vw;                
+  background: #fff;            
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 110px;         
+  padding-bottom: 80px;       
+  box-sizing: border-box;
+}
+
+.compartilhar-header {
+  width: 100%;
+  background: #ff746c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.compartilhar-logo {
+  height: 70px;
+}
+
+.compartilhar-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;     
+  width: 100%;
+  max-width: 600px;            
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+  transform: translateY(-30px); 
+}
+
+.compartilhar-info {
+  text-align: center;
+}
+
+.compartilhar-nome {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.3rem;
+}
+
+.compartilhar-curso {
+  font-size: 1rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.compartilhar-card {
+  background: #fff;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  text-align: center;
+}
+
+.compartilhar-titulo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.compartilhar-data-local {
+  margin-top: 1rem;
+}
+
+.compartilhar-dia-hora {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.3rem;
+}
+
+.compartilhar-localizacao {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.8rem;
+}
+
+/* Botão do WhatsApp */
+.compartilhar-whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #ffffff;
+  color: #25d366;
+  border: 2px solid #25d366;
+  padding: 0.7rem 1rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  max-width: 280px;
+  margin: 40px auto;
+  transition: all 0.2s ease;
+}
+
+.compartilhar-whatsapp:hover {
+  background: #25d366;
+  color: #fff;
+}
+
+.compartilhar-whatsapp img {
+  width: 22px;
+  height: 22px;
+}
+
+/* Botão Voltar */
+.compartilhar-voltar {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.compartilhar-voltar button {
+  background: #ff6b6b;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 5rem;
+}
+
+.compartilhar-voltar button:hover {
+  background: #e05252;
+}
+
+.compartilhar-footer {
+  width: 100%;
+  background: #ff746c;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .compartilhar-card {
+    padding: 1.5rem;
+    margin: 0 1rem;
+  }
+
+  .compartilhar-titulo {
+    font-size: 1.2rem;
+  }
+
+  .compartilhar-whatsapp {
+    font-size: 0.9rem;
+  }
+}
