@@ -10,6 +10,7 @@ import CadastroPessoa from './pages/CadastroPessoa'
 import Compartilhar from './pages/Compartilhar'
 import Detalhes from './pages/Detalhes'
 import VerMensagens from './pages/VerMensagens'
+import MensagemEnviada from './pages/MensagemEnviada'
 
 function App() {
   return (
@@ -23,8 +24,7 @@ function App() {
         <Route path="/formando/:id" element={<PerfilConfirmar />} /> {/* Rota dinâmica */}
         <Route path="/formando/:id/cadastro-pessoa" element={<CadastroPessoa />} />
         <Route path="/formando/:id/detalhes" element={<Detalhes />} />
-        <Route path='/formando/:id/confirmacao' element={<h1>Confirmação de Presença Enviada! 🎉</h1>} />
-        <Route path='/formando/:id/mensagem-enviada' element={<h1>Mensagem Enviada! 📬</h1>} />
+        <Route path='/formando/:id/mensagem-enviada' element={< MensagemEnviada />} />
         <Route path='/formando/:id/ver-mensagens' element={< VerMensagens />} />
         <Route path='/formando/:id/compartilhar' element={< Compartilhar />} />
         <Route path="*" element={<h1>Página não encontrada 😅</h1>} />

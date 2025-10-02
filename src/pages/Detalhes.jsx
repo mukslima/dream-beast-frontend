@@ -165,7 +165,12 @@ export default function Detalhes() {
           <textarea id="mensagem" name="mensagem" rows="5" cols="30" placeholder="Digite sua mensagem aqui"></textarea>
         </div>
         <div className="detalhes-btn-group">
-          <button type="button">Enviar Mensagem</button>
+          <button 
+              className="detalhes-btn detalhes-compartilhar" 
+              onClick={() => navigate(`/formando/${formando.id}/mensagem-enviada`)}
+              >
+                  Enviar Mensagem
+          </button>
           <button 
               className="detalhes-btn detalhes-compartilhar" 
               onClick={() => navigate(`/formando/${formando.id}/ver-mensagens`)}
