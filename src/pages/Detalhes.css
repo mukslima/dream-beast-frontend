@@ -1,20 +1,23 @@
 .detalhes-container {
   min-height: 100vh;
-  width: 100vw;
-  background: #fff;
+  width: 100vw;                
+  background: #fff;            
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  padding-top: 110px;         
+  padding-bottom: 80px;       
+  box-sizing: border-box;
 }
 
 .detalhes-header {
   width: 100%;
-  background: #FF746C;
+  background: #ff746c;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.2rem 0 1rem 0;
+  padding: 1.2rem 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -26,117 +29,143 @@
 }
 
 .detalhes-main {
-  width: 100%;
-  max-width: 400px;
-  margin-top: 110px;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 1rem;
-  gap: 1rem;
+  justify-content: center;     
+  width: 100%;
+  max-width: 600px;            
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+  transform: translateY(-30px); 
+}
+
+.detalhes-info {
+  text-align: center;
 }
 
 .detalhes-nome {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.4rem;
+  font-weight: 700;
   color: #222;
-  text-align: center;
+  margin-bottom: 0.3rem;
 }
 
 .detalhes-curso {
   font-size: 1rem;
-  color: #444;
+  color: #555;
   font-weight: 500;
-  text-align: center;
 }
 
-.detalhes-local {
-  width: 100%;
-  text-align: center;
-  font-size: 0.95rem;
-  color: #222;
-  font-weight: 500;
-  margin-top: 0.5rem;
-}
-
-.detalhes-endereco {
-  font-size: 0.9rem;
-  color: #666;
-  margin-top: 0.3rem;
-}
-
-.detalhes-maps-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  border-radius: 25px;
-  padding: 0.6rem 1rem;
-  margin-top: 0.8rem;
-  gap: 0.5rem;
-  cursor: pointer;
-  text-decoration: none;
-  transition: transform 0.2s;
-}
-
-.detalhes-maps-btn:hover {
-  transform: scale(1.03);
-}
-
-.detalhes-maps-btn img {
-  width: 24px;
-  height: 24px;
-}
-
-.detalhes-datas {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  font-size: 0.95rem;
-  color: #222;
-  text-align: center;
-}
-
-.detalhes-msg-box {
-  width: 100%;
-  min-height: 100px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 0.8rem;
-  font-size: 0.9rem;
-  color: #333;
-  background: #fafafa;
-}
-
-.detalhes-btn-group {
-  width: 100%;
-  display: flex;
-  gap: 0.5rem;
+.detalhes-data-local {
   margin-top: 1rem;
 }
 
+.detalhes-dia-hora {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.3rem;
+}
+
+.detalhes-localizacao {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.8rem;
+}
+
+.detalhes-maps-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #333;
+  transition: transform 0.2s;
+  margin-top: 2rem;
+}
+
+.detalhes-maps-btn:hover {
+  transform: scale(1.05);
+}
+
+.detalhes-maps-btn img {
+  width: 22px;
+  height: 22px;
+}
+
+/* TextArea */
+.detalhes-mensagem {
+  width: 100%;
+  max-width: 500px;
+  text-align: left;
+  margin-bottom: 1rem;
+  background: #fff;
+}
+
+.detalhes-mensagem label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  margin-top: 1rem;
+  color: #000000;
+}
+
+.detalhes-mensagem textarea {
+  width: 100%;
+  resize: none;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  font-family: inherit;
+  box-shadow: 0 2px 6px #fff;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.detalhes-mensagem textarea:focus {
+  border-color: #ff6b6b;
+}
+
+.detalhes-btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;               /* espaçamento horizontal entre botões */
+  width: 100%;
+  margin-top: 5rem;       /* afasta do bloco de infos */
+  flex-wrap: wrap;          /* caso tela mobile, quebra bonitinho */
+}
+
 .detalhes-btn-group button {
-  flex: 1;
-  padding: 0.8rem 0;
+  flex: 1;                  /* distribui espaço igualmente entre os 3 */
+  min-width: 120px;         /* impede que fiquem muito pequenos em telas menores */
+  background: #FF746C;
+  color: #fff;
   border: none;
-  border-radius: 30px;
+  border-radius: 25px;
+  padding: 0.8rem;
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
-  color: #fff;
-  background: #FF746C;
   transition: background 0.2s;
+  white-space: nowrap;      /* impede quebrar texto dentro do botão */
 }
 
 .detalhes-btn-group button:hover {
   background: #ff4b4b;
 }
 
+
 .detalhes-footer {
   width: 100%;
-  background: #FF746C;
+  background: #ff746c;
   color: #fff;
   text-align: center;
   padding: 1rem 0;
@@ -150,7 +179,7 @@
 /* Mobile */
 @media (max-width: 480px) {
   .detalhes-main {
-    max-width: 95vw;
+    max-width: 95%;
     margin-top: 90px;
   }
 }
