@@ -66,6 +66,8 @@
 
 .home-btn:hover {
   background-color: #ff4b4b;
+  text-decoration: none;
+  color: white;
 }
 
 /* Responsivo para tablets e mobile */
