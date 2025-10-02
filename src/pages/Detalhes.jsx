@@ -166,8 +166,13 @@ export default function Detalhes() {
         </div>
         <div className="detalhes-btn-group">
           <button type="button">Enviar Mensagem</button>
-          <button type="button">Ver Mensagens</button>
-           <button 
+          <button 
+              className="detalhes-btn detalhes-compartilhar" 
+              onClick={() => navigate(`/formando/${formando.id}/ver-mensagens`)}
+              >
+                  Ver Mensagens
+          </button>
+          <button 
               className="detalhes-btn detalhes-compartilhar" 
               onClick={() => navigate(`/formando/${formando.id}/compartilhar`)}
               >
