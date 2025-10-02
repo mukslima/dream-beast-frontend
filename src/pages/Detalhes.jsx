@@ -140,8 +140,8 @@ export default function Detalhes() {
           <p className="detalhes-curso">{formando.curso}</p>
 
           <div className="detalhes-data-local">
-            <p className="detalhes-dia-hora">{formando.diaHora}</p>
             <p className="detalhes-localizacao">{formando.localizacao}</p>
+            <p className="detalhes-dia-hora">{formando.diaHora}</p>
 
             <a
               href={formando.mapsUrl}
