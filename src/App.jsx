@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom'
 import Home from './pages/Home'
 import LoginCliente from './pages/LoginCliente'
 import LoginAdmin from './pages/LoginAdmin'
@@ -14,7 +14,7 @@ import MensagemEnviada from './pages/MensagemEnviada'
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login-cliente" element={<LoginCliente />} />
@@ -29,7 +29,7 @@ function App() {
         <Route path='/formando/:id/compartilhar' element={< Compartilhar />} />
         <Route path="*" element={<h1>Página não encontrada 😅</h1>} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
