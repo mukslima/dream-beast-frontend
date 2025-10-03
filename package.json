@@ -1,4 +1,5 @@
 {
+  "homepage": "https://seu-usuario.github.io/seu-repositorio",
   "name": "dream-beast-frontend",
   "private": true,
   "version": "0.0.0",
@@ -24,5 +25,9 @@
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.4.0",
     "vite": "^7.1.7"
-  }
+  },
+  "scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+}
 }
