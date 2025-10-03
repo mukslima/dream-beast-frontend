@@ -4,7 +4,7 @@
 [![Vite](https://img.shields.io/badge/Vite-7.1.7-brightgreen?logo=vite&logoColor=white)](https://vitejs.dev/)
 [![JSX](https://img.shields.io/badge/JSX-React-orange?logo=react&logoColor=white)](https://reactjs.org/docs/introducing-jsx.html)
 [![CSS3](https://img.shields.io/badge/CSS3-blue?logo=css3&logoColor=white)](https://developer.mozilla.org/docs/Web/CSS)
-[![Node.js](https://img.shields.io/badge/Node.js-20.17.0-green?logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-20.19.0-green?logo=node.js&logoColor=white)](https://nodejs.org/)
 
 
 O **Dream Beast Frontend** é um projeto desenvolvido com **React + Vite** para criar uma experiência rápida e interativa de mensagens à distância, celebrando momentos especiais mesmo quando estamos longe. Ideal para enviar mensagens, celebrar datas e compartilhar sentimentos com amigos, familiares ou colegas. 💌✨
