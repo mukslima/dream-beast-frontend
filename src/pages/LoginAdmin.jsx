@@ -25,24 +25,27 @@ export default function LoginAdmin() {
       <header className="login-header">
         <img src={logob} alt="Logo" className="login-logo" />
       </header>
+
       <div className="login-card">
         <h1 className="login-title">
           OLÁ
           <br />
           ORGANIZADOR
         </h1>
+
         <form onSubmit={handleSubmit} className="login-form">
           <div className="form-group">
             <label htmlFor="nome">Nome</label>
             <input
               id="nome"
               type="text"
-              placeholder="Digite a sua nome"
+              placeholder="Digite seu nome"
               value={form.nome}
               onChange={(e) => setForm({ ...form, nome: e.target.value })}
               required
             />
           </div>
+
           <div className="form-group">
             <label htmlFor="senha">Senha</label>
             <div className="senha-group">
@@ -62,6 +65,7 @@ export default function LoginAdmin() {
               />
             </div>
           </div>
+
           <div className="login-options">
             <label className="lembre-me">
               <input
@@ -79,6 +83,7 @@ export default function LoginAdmin() {
               Esqueci minha senha
             </button>
           </div>
+
           <button type="submit" className="login-admin-btn">
             Entrar
           </button>

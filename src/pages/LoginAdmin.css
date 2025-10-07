@@ -92,44 +92,47 @@
   position: relative;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .senha-group input {
   width: 100%;
-  padding-right: 40px;
+  padding: 0.8rem 2.8rem 0.8rem 1rem; /* igual ao input normal + espaço pro olho */
+  box-sizing: border-box; /* garante alinhamento */
 }
 
 .senha-olho {
   position: absolute;
-  right: 10px;
+  right: 12px;
   width: 24px;
   height: 24px;
   cursor: pointer;
 }
 
+/* Ajuste do lembre-me */
 .login-options {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 1rem;
-  font-size: 1rem;
   width: 100%;
+  gap: 1rem;
 }
 
 .lembre-me {
   display: flex;
   align-items: center;
-  gap: 0.6rem; /* aumenta o espaço entre checkbox e texto */
+  gap: 0.5rem;
   font-size: 1rem;
 }
 
 .lembre-me input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   accent-color: #5a54c6;
-  margin: 0;
-  vertical-align: middle; /* garante alinhamento vertical */
+  cursor: pointer;
 }
+
 
 .esqueci-senha {
   background: none;
