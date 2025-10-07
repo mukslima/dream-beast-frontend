@@ -1,7 +1,6 @@
 import React from 'react'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
-import LoginCliente from './pages/LoginCliente'
 import LoginAdmin from './pages/LoginAdmin'
 import CadastroFormando from './pages/CadastroFormando'
 import ListaFormandos from './pages/ListaFormados'
@@ -17,7 +16,6 @@ function App() {
     <HashRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login-cliente" element={<LoginCliente />} />
         <Route path="/login-admin" element={<LoginAdmin />} />
         <Route path="/cadastro-formando" element={<CadastroFormando />} />
         <Route path="/lista-formandos" element={<ListaFormandos />} />

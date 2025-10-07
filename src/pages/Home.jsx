@@ -12,7 +12,7 @@ function Home() {
         <div className="home-text">Mensagens que viram <br></br>lembranças para sempre.</div>
         <div className="home-subtext">Comece seu login e participe do momento</div>
         <div className="home-btns">
-          <Link to="/login-cliente" className="home-btn login-btn">Login</Link>
+          <Link to="/lista-formandos" className="home-btn login-btn">Formandos</Link>
           <Link to="/login-admin" className="home-btn admin-btn">Admin</Link>
         </div>
     </div>

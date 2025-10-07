@@ -11,13 +11,7 @@ export default function ListaFormandos() {
     { id: 1, nome: "Fernanda Gomes" },
     { id: 2, nome: "Carlos Rangel" },
     { id: 3, nome: "Marcos AND Lima" },
-    { id: 4, nome: "Deivid SP" },
-    { id: 5, nome: "Nome e Sobrenome" },
-    { id: 6, nome: "Nome e Sobrenome" },
-    { id: 7, nome: "Nome e Sobrenome" },
-    { id: 8, nome: "Nome e Sobrenome" },
-    { id: 9, nome: "Nome e Sobrenome" },
-    { id: 10, nome: "Nome e Sobrenome" },
+    { id: 4, nome: "Deivid" },
   ];
 
   const filtrados = formandos.filter(f =>
