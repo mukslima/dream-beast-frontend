@@ -40,6 +40,73 @@
   gap: 1rem;
 }
 
+  /* Menu Hamburguer e Opções */
+
+  .hamburger {
+  width: 30px;
+  height: 22px;
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.hamburger span {
+  height: 4px;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.menu-lateral {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background: #000;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 15;
+}
+
+.menu-lateral button {
+  background: none;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.menu-lateral button:hover {
+  color: #c7c7ff;
+}
+
+.menu-lateral button.ativo {
+  font-weight: bold;
+  color: #ffd966;
+}
+
+
 .form-group input {
   width: 100%;
   padding: 0.8rem;
