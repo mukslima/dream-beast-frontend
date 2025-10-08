@@ -4,33 +4,31 @@ import logob from "../assets/logob.svg";
 import maisfoto from "../assets/maisfoto.svg";
 import "./CadastroPessoa.css";
 
+const dados = [
+  { id: 1, nome: "Fernanda Gomes", tipo: "formatura", curso: "Direito - UFRJ" },
+  { id: 2, nome: "Carlos Rangel", tipo: "formatura", curso: "Engenharia - UFF" },
+  { id: 3, nome: "Marcos AND Lima", tipo: "formatura", curso: "Sistemas Para Internet - IFPB" },
+  { id: 4, nome: "Deivid SP", tipo: "formatura", curso: "Engenharia Computação - USP" },
+  { id: 5, nome: "João Silva", tipo: "formatura", curso: "Medicina - UFRJ" },
+  { id: 6, nomeNoivo: "Marcos", nomeNoiva: "Thais", tipo: "casamento" },
+  { id: 7, nomeNoivo: "Carlos", nomeNoiva: "Viviam", tipo: "casamento"},
+  { id: 8, nomeNoivo: "Pedro", nomeNoiva: "Mariana", tipo: "casamento" },
+  { id: 9, nome: "Tiago Alcantra", tipo: "aniversario", dataNascimento: "2020-11-05" },
+  { id: 10, nome: "Lucas Pereira", tipo: "aniversario", dataNascimento: "1990-10-03" },
+];
+
 export default function CadastroPessoa() {
-  const { id } = useParams();
+  const { tipo, id } = useParams();
   const navigate = useNavigate();
 
+  const item = dados.find(f => String(f.id) === String(id));
   const [formData, setFormData] = useState({
     nome: "",
     telefone: "",
     email: "",
   });
 
-  // Exemplo de lista de formandos (substitua por fetch se for necessário)
-  const formandos = [
-    { id: "1", nome: "Fernanda Gomes", curso: "Direito - UFRJ" },
-    { id: "2", nome: "Carlos Rangel", curso: "Engenharia - UFF" },
-    { id: "3", nome: "Marcos AND Lima", curso: "Sistemas Para Internet - IFPB" },
-    { id: "4", nome: "Deivid SP", curso: "Engenharia Computação - USP" },
-    { id: "5", nome: "Nome e Sobrenome", curso: "Medicina - UFRJ" },
-    { id: "6", nome: "Nome e Sobrenome", curso: "Medicina - UFRJ" },
-    { id: "7", nome: "Nome e Sobrenome", curso: "Medicina - UFRJ" },
-    { id: "8", nome: "Nome e Sobrenome", curso: "Medicina - UFRJ" },
-    { id: "9", nome: "Nome e Sobrenome", curso: "Medicina - UFRJ" },
-    { id: "10", nome: "Nome e Sobrenome", curso: "Medicina - UFRJ" },
-  ];
-
-  const formando = formandos.find(f => f.id === id);
-
-  if (!formando) {
+  if (!item) {
     return (
       <div className="cadastro-pessoa-container">
         <header className="cadastro-pessoa-header">
@@ -48,6 +46,10 @@ export default function CadastroPessoa() {
     );
   }
 
+  const displayName = item.tipo === "casamento"
+    ? `${item.nomeNoivo} & ${item.nomeNoiva}`
+    : item.nome;
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -60,11 +62,11 @@ export default function CadastroPessoa() {
       return;
     }
 
-    // Armazena os dados no localStorage (se quiser usar depois)
+    // Aqui pode salvar no localStorage ou enviar pra API futuramente
     localStorage.setItem("dadosPessoa", JSON.stringify(formData));
 
-    // Redireciona para a tela de detalhes com o mesmo ID
-    navigate(`/formando/${id}/detalhes`);
+    // Navega pra tela de Detalhes
+    navigate(`/${tipo}/${id}/detalhes`);
   };
 
   return (
@@ -72,17 +74,23 @@ export default function CadastroPessoa() {
       <header className="cadastro-pessoa-header">
         <img src={logob} alt="Dream Beast" className="cadastro-pessoa-logo" />
       </header>
+
       <main className="cadastro-pessoa-main">
-        <div className="cadastro-pessoa-nome">{formando.nome}</div>
-        <div className="cadastro-pessoa-curso">{formando.curso}</div>
+        <div className="cadastro-pessoa-nome">{displayName}</div>
+        {item.tipo === "formatura" && <div className="cadastro-pessoa-curso">{item.curso}</div>}
+        {item.tipo === "casamento" && <div className="cadastro-pessoa-curso">{item.localizacao}</div>}
+        {item.tipo === "aniversario" && item.dataNascimento && (<div className="cadastro-pessoa-curso">Nascimento: {item.dataNascimento}</div>)}
+
         <div className="cadastro-pessoa-alert">
-          Antes de continuar a com a sua mensagem,<br />
+          Antes de continuar com a sua mensagem,<br />
           precisamos de algumas informações suas.
         </div>
+
         <div className="cadastro-pessoa-foto">
-          <span>Seleciona foto</span>
+          <span>Selecionar foto</span>
           <img src={maisfoto} alt="Selecionar foto" className="cadastro-pessoa-foto-img" />
         </div>
+
         <form className="cadastro-pessoa-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Nome</label>
@@ -95,6 +103,7 @@ export default function CadastroPessoa() {
               required
             />
           </div>
+
           <div className="form-group">
             <label>Telefone</label>
             <input
@@ -106,6 +115,7 @@ export default function CadastroPessoa() {
               required
             />
           </div>
+
           <div className="form-group">
             <label>Email (Opcional)</label>
             <input
@@ -116,11 +126,13 @@ export default function CadastroPessoa() {
               onChange={handleChange}
             />
           </div>
+
           <button type="submit" className="cadastro-pessoa-btn">
             Confirmar Cadastro
           </button>
         </form>
       </main>
+
       <footer className="cadastro-pessoa-footer">
         © 2025 Powered by Dream Best
       </footer>
