@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./ListaFormados.css";
 import logob from "../assets/logob.svg";
 import avatar from "../assets/avatar.svg";
 
 export default function ListaFormandos() {
   const [busca, setBusca] = useState("");
+  const navigate = useNavigate(); 
 
   const dados = [
     { id: 1, nome: "Fernanda Gomes", tipo: "formatura" },
@@ -18,6 +19,7 @@ export default function ListaFormandos() {
     { id: 8, nomeNoivo: "Pedro", nomeNoiva: "Mariana", tipo: "casamento" },
     { id: 9, nome: "Tiago Alcantra", tipo: "aniversario" },
     { id: 10, nome: "Lucas Pereira", tipo: "aniversario" },
+    // ... mais dados podem ser adicionados aqui
   ];
 
   const filtrados = dados.filter((f) => {
@@ -73,6 +75,13 @@ export default function ListaFormandos() {
           ))}
         </ul>
       </main>
+
+      <button
+        className="lista-btn-voltar"
+        onClick={() => navigate(-1)}
+      >
+        Voltar
+      </button>
 
       <footer className="lista-footer">© 2025 Powered by Dream Best</footer>
     </div>

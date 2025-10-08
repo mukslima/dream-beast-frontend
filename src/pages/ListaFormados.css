@@ -140,6 +140,7 @@
   z-index: 10;
 }
 
+
 .lista-formandos {
   padding: 2rem;
   max-width: 1000px;
@@ -202,6 +203,24 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.9rem;
+}
+
+.lista-btn-voltar {
+  background: #ff746c;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 0.8rem 2rem;
+  margin-top: 50px;
+  margin-bottom: 120px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.lista-btn-voltar:hover {
+  background: #ff4b4b;
 }
 
 .btn-ver {
