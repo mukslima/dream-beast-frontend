@@ -15,16 +15,21 @@ function App() {
   return (
     <HashRouter>
       <Routes>
+        {/* Rotas principais */}
         <Route path="/" element={<Home />} />
         <Route path="/login-admin" element={<LoginAdmin />} />
         <Route path="/cadastro-formando" element={<CadastroFormando />} />
         <Route path="/lista-formandos" element={<ListaFormandos />} />
-        <Route path="/formando/:id" element={<PerfilConfirmar />} /> {/* Rota dinâmica */}
-        <Route path="/formando/:id/cadastro-pessoa" element={<CadastroPessoa />} />
-        <Route path="/formando/:id/detalhes" element={<Detalhes />} />
-        <Route path='/formando/:id/mensagem-enviada' element={< MensagemEnviada />} />
-        <Route path='/formando/:id/ver-mensagens' element={< VerMensagens />} />
-        <Route path='/formando/:id/compartilhar' element={< Compartilhar />} />
+
+        {/* Rotas dinâmicas para diferentes tipos */}
+        <Route path="/:tipo/:id" element={<PerfilConfirmar />} />
+        <Route path="/:tipo/:id/cadastro-pessoa" element={<CadastroPessoa />} />
+        <Route path="/:tipo/:id/detalhes" element={<Detalhes />} />
+        <Route path="/:tipo/:id/mensagem-enviada" element={<MensagemEnviada />} />
+        <Route path="/:tipo/:id/ver-mensagens" element={<VerMensagens />} />
+        <Route path="/:tipo/:id/compartilhar" element={<Compartilhar />} />
+
+        {/* 404 */}
         <Route path="*" element={<h1>Página não encontrada 😅</h1>} />
       </Routes>
     </HashRouter>

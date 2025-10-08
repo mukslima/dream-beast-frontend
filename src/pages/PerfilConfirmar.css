@@ -7,66 +7,83 @@
   align-items: center;
 }
 
+.lista-header {
+  width: 100vw;
+  background: #FF746C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.lista-logo { height: 70px; }
+
 .perfil-main {
   width: 100%;
-  max-width: 400px;
-  margin: 110px auto 0 auto;
+  max-width: 600px;
+  margin: 120px auto 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.2rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* Avata + nome lado a lado */
+.perfil-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  width: 100%;
 }
 
 .perfil-avatar {
-  width: 80px;
-  height: 80px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
-  background: #eee;
   object-fit: cover;
+  background: #eee;
 }
 
 .perfil-nome {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: #FF746C;
-  font-weight: bold;
-  text-align: center;
+  font-weight: 700;
 }
 
-.perfil-curso {
-  font-size: 1rem;
-  color: #FF746C;
-  text-align: center;
-  margin-bottom: 1rem;
+.perfil-curso, .perfil-local, .perfil-data {
+  font-size: 0.95rem;
+  color: #333;
+  margin-top: 4px;
 }
 
 .perfil-btn {
   width: 100%;
-  max-width: 300px;
-  padding: 0.8rem 0;
-  border: none;
+  max-width: 360px;
+  padding: 0.9rem 1rem;
   border-radius: 30px;
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
+  border: none;
+  font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-  background: #fff;
-  color: #FF746C;
-  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
 .perfil-confirmar {
-  color: #FF746C;
-  background: #fff;
-}
-
-.perfil-cancelar {
-  color: #FF746C;
-  background: #fff;
+  background: #FF746C;
+  color: #fff;
 }
 
 .perfil-voltar {
-  background: #FF746C;
-  color: #fff;
-  margin-top: 1rem;
+  background: #fff;
+  color: #FF746C;
+  border: 1px solid #ffb3ab;
 }

@@ -1,135 +1,51 @@
+// src/pages/Detalhes.jsx
 import { useParams, useNavigate } from "react-router-dom";
 import logob from "../assets/logob.svg";
 import maisfoto from "../assets/maisfoto.svg";
 import "./Detalhes.css";
+import { useState } from "react";
+
+/* mesmo array de dados (ideal: importar de um único lugar) */
+const dados = [
+  { id: 1, nome: "Fernanda Gomes", tipo: "formatura", curso: "Direito - UFRJ", diaHora: "25/12/2025 às 19:00", localizacao: "Joy Garden Festas, R. de Lazer, 149 - Pilares, Rio de Janeiro - RJ", mapsUrl: "https://www.google.com/maps?q=Joy+Garden+Festas,+R.+de+Lazer,+149+-+Pilares,+Rio+de+Janeiro+-+RJ" },
+  { id: 2, nome: "Carlos Rangel", tipo: "formatura", curso: "Engenharia - UFF", diaHora: "30/11/2025 às 18:00", localizacao: "Espaço Verde, Av. das Flores, 200 - Centro, Niterói - RJ" },
+  { id: 3, nome: "Marcos AND Lima", tipo: "formatura", curso: "Sistemas Para Internet - IFPB", diaHora: "31/10/2025 às 20:00", localizacao: "Salão Nobre, R. Principal, 50 - João Pessoa - PB" },
+  { id: 4, nome: "Deivid SP", tipo: "formatura", curso: "Engenharia Computação - USP", diaHora: "15/11/2025 às 18:00", localizacao: "Clube dos Engenheiros, Av. Tecnológica, 300 - São Paulo - SP" },
+  { id: 5, nome: "João Silva", tipo: "formatura", curso: "Direito - UFRJ", diaHora: "05/08/2025 às 19:30", localizacao: "Hotel Luxo, R. das Acácias, 400 - Copacabana, RJ" },
+  { id: 6, nomeNoivo: "Marcos", nomeNoiva: "Thais", tipo: "casamento", localizacao: "Buffet Real", mapsUrl: "" },
+  { id: 7, nomeNoivo: "Carlos", nomeNoiva: "Viviam", tipo: "casamento", localizacao: "Espaço Alfa" },
+  { id: 8, nomeNoivo: "Pedro", nomeNoiva: "Mariana", tipo: "casamento", localizacao: "Casa de Festa" },
+  { id: 9, nome: "Tiago Alcantra", tipo: "aniversario", dataNascimento: "2020-11-05", localizacao: "Buffet Kids" },
+  { id: 10, nome: "Lucas Pereira", tipo: "aniversario", dataNascimento: "1990-10-03", localizacao: "Clube XYZ" },
+];
 
 export default function Detalhes() {
-  const { id } = useParams();
-
+  const { tipo, id } = useParams();
   const navigate = useNavigate();
+  const item = dados.find((f) => String(f.id) === String(id));
+  const [mensagem, setMensagem] = useState("");
 
-  // Exemplo de lista de formandos (substitua por fetch se for necessário)
-  const formandos = [
-    {
-      id: "1",
-      nome: "Fernanda Gomes",
-      curso: "Direito - UFRJ",
-      diaHora: "25/12/2025 às 19:00",
-      localizacao:
-        "Joy Garden Festas, R. de Lazer, 149 - Pilares, Rio de Janeiro - RJ",
-      mapsUrl:
-        "https://www.google.com/maps?q=Joy+Garden+Festas,+R.+de+Lazer,+149+-+Pilares,+Rio+de+Janeiro+-+RJ",
-    },
-    {
-      id: "2",
-      nome: "Carlos Rangel",
-      curso: "Engenharia - UFF",
-      diaHora: "25/12/2025 às 19:00",
-      localizacao:
-        "Joy Garden Festas, R. de Lazer, 149 - Pilares, Rio de Janeiro - RJ",
-      mapsUrl:
-        "https://www.google.com/maps?q=Joy+Garden+Festas,+R.+de+Lazer,+149+-+Pilares,+Rio+de+Janeiro+-+RJ",
-    },
-    {
-      id: "3",
-      nome: "Marcos AND Lima",
-      curso: "Sistemas Para Internet - IFPB",
-      diaHora: "31/10/2025 às 20:00",
-      localizacao:
-        "R. Paulo Roberto de Souza Acioly, 1710 - Bessa, João Pessoa - PB, 58035-110",
-      mapsUrl:
-        "https://www.google.com/maps/place/Alpendre+Recep%C3%A7%C3%B5es/@-7.0598271,-34.8819931,14z/data=!4m10!1m2!2m1!1sEspa%C3%A7o+de+Eventos,+R.+da+Alegria,+200+-+Centro,+Jo%C3%A3o+Pessoa+-+PB!3m6!1s0x7acdde670a8aa8b:0x31a04dfca5b28963!8m2!3d-7.0598278!4d-34.8455009!15sCkJFc3Bhw6dvIGRlIEV2ZW50b3MsIFIuIGRhIEFsZWdyaWEsIDIwMCAtIENlbnRybywgSm_Do28gUGVzc29hIC0gUEJaPCI6ZXNwYcOnbyBkZSBldmVudG9zIHIgZGEgYWxlZ3JpYSAyMDAgY2VudHJvIGpvw6NvIHBlc3NvYSBwYpIBC2V2ZW50X3ZlbnVlmgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVVJQYnpaUVUxaEJFQUWqAXwQASoWIhJlc3Bhw6dvIGRlIGV2ZW50b3MoDDIgEAEiHId7hgleJDCaX4eUzO2TRYp8H_EveNxODn4F5XcyPhACIjplc3Bhw6dvIGRlIGV2ZW50b3MgciBkYSBhbGVncmlhIDIwMCBjZW50cm8gam_Do28gcGVzc29hIHBi4AEA-gEECAAQPQ!16s%2Fg%2F11g6hw3dn1?entry=ttu&g_ep=EgoyMDI1MDkyOS4wIKXMDSoASAFQAw%3D%3D",
-    },
-    {
-      id: "4",
-      nome: "Deivid SP",
-      curso: "Engenharia Computação - USP",
-      diaHora: "15/11/2025 às 18:00",
-      localizacao:
-        "Espaço Alfa, Av. das Nações, 300 - Vila Olímpia, São Paulo - SP",
-      mapsUrl:
-        "https://www.google.com/maps?q=Espaço+Alfa,+Av.+das+Nações,+300+-+Vila+Olímpia,+São+Paulo+-+SP",
-    },
-    {
-      id: "5",
-      nome: "Nome e Sobrenome",
-      curso: "Direito - UFRJ",
-      diaHora: "25/12/2025 às 19:00",
-      localizacao:
-        "Joy Garden Festas, R. de Lazer, 149 - Pilares, Rio de Janeiro - RJ",
-      mapsUrl:
-        "https://www.google.com/maps?q=Joy+Garden+Festas,+R.+de+Lazer,+149+-+Pilares,+Rio+de+Janeiro+-+RJ",
-    },
-    {
-      id: "6",
-      nome: "Nome e Sobrenome",
-      curso: "Direito - UFRJ",
-      diaHora: "25/12/2025 às 19:00",
-      localizacao:
-        "Joy Garden Festas, R. de Lazer, 149 - Pilares, Rio de Janeiro - RJ",
-      mapsUrl:
-        "https://www.google.com/maps?q=Joy+Garden+Festas,+R.+de+Lazer,+149+-+Pilares,+Rio+de+Janeiro+-+RJ",
-    },
-    {
-      id: "7",
-      nome: "Nome e Sobrenome",
-      curso: "Direito - UFRJ",
-      diaHora: "25/12/2025 às 19:00",
-      localizacao:
-        "Joy Garden Festas, R. de Lazer, 149 - Pilares, Rio de Janeiro - RJ",
-      mapsUrl:
-        "https://www.google.com/maps?q=Joy+Garden+Festas,+R.+de+Lazer,+149+-+Pilares,+Rio+de+Janeiro+-+RJ",
-    },
-    {
-      id: "8",
-      nome: "Nome e Sobrenome",
-      curso: "Direito - UFRJ",
-      diaHora: "25/12/2025 às 19:00",
-      localizacao:
-        "Joy Garden Festas, R. de Lazer, 149 - Pilares, Rio de Janeiro - RJ",
-      mapsUrl:
-        "https://www.google.com/maps?q=Joy+Garden+Festas,+R.+de+Lazer,+149+-+Pilares,+Rio+de+Janeiro+-+RJ",
-    },
-    {
-      id: "9",
-      nome: "Nome e Sobrenome",
-      curso: "Direito - UFRJ",
-      diaHora: "25/12/2025 às 19:00",
-      localizacao:
-        "Joy Garden Festas, R. de Lazer, 149 - Pilares, Rio de Janeiro - RJ",
-      mapsUrl:
-        "https://www.google.com/maps?q=Joy+Garden+Festas,+R.+de+Lazer,+149+-+Pilares,+Rio+de+Janeiro+-+RJ",
-    },
-    {
-      id: "10",
-      nome: "Nome e Sobrenome",
-      curso: "Direito - UFRJ",
-      diaHora: "25/12/2025 às 19:00",
-      localizacao:
-        "Joy Garden Festas, R. de Lazer, 149 - Pilares, Rio de Janeiro - RJ",
-      mapsUrl:
-        "https://www.google.com/maps?q=Joy+Garden+Festas,+R.+de+Lazer,+149+-+Pilares,+Rio+de+Janeiro+-+RJ",
-    },
-    // ...demais formandos
-  ];
-
-  const formando = formandos.find((f) => f.id === id);
-
-  if (!formando) {
+  if (!item) {
     return (
       <div className="detalhes-container">
         <header className="detalhes-header">
           <img src={logob} alt="Dream Beast" className="detalhes-logo" />
         </header>
         <main className="detalhes-main">
-          <div className="detalhes-alert">Formando não encontrado.</div>
+          <div className="detalhes-alert">Item não encontrado.</div>
         </main>
-        <footer className="detalhes-footer">
-          © 2025 Powered by Dream Best
-        </footer>
       </div>
     );
   }
+
+  const displayName = item.tipo === "casamento"
+    ? `${item.nomeNoivo} & ${item.nomeNoiva}`
+    : item.nome;
+
+  const handleEnviar = () => {
+    // no front: só navega para a página de confirmação
+    navigate(`/${tipo}/${id}/mensagem-enviada`, { state: { mensagem, nome: displayName }});
+  };
 
   return (
     <div className="detalhes-container">
@@ -139,56 +55,38 @@ export default function Detalhes() {
 
       <main className="detalhes-main">
         <div className="detalhes-info">
-          <h1 className="detalhes-nome">{formando.nome}</h1>
-          <p className="detalhes-curso">{formando.curso}</p>
+          <h1 className="detalhes-nome">{displayName}</h1>
+          {item.tipo === "formatura" && <p className="detalhes-curso">{item.curso}</p>}
+          {item.localizacao && <p className="detalhes-localizacao">{item.localizacao}</p>}
+          {item.diaHora && <p className="detalhes-dia-hora">{item.diaHora}</p>}
 
-          <div className="detalhes-data-local">
-            <p className="detalhes-localizacao">{formando.localizacao}</p>
-            <p className="detalhes-dia-hora">{formando.diaHora}</p>
-
-            <a
-              href={formando.mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="detalhes-maps-btn"
-            >
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/2886/2886372.png"
-                alt="Google Maps"
-              />
+          {item.mapsUrl && (
+            <a href={item.mapsUrl} target="_blank" rel="noopener noreferrer" className="detalhes-maps-btn">
+              <img src="https://cdn-icons-png.flaticon.com/512/2886/2886372.png" alt="maps" />
               Ver Localização
             </a>
-          </div>
+          )}
         </div>
+
         <div className="detalhes-mensagem">
-          <label for="mensagem">Sua Mensagem:</label>
-          <textarea id="mensagem" name="mensagem" rows="5" cols="30" placeholder="Digite sua mensagem aqui"></textarea>
+          <label htmlFor="mensagem">Sua Mensagem:</label>
+          <textarea
+            id="mensagem"
+            rows="5"
+            placeholder="Digite sua mensagem aqui"
+            value={mensagem}
+            onChange={(e) => setMensagem(e.target.value)}
+          />
         </div>
+
         <div className="detalhes-btn-group">
-          <button 
-              className="detalhes-btn detalhes-compartilhar" 
-              onClick={() => navigate(`/formando/${formando.id}/mensagem-enviada`)}
-              >
-                  Enviar Mensagem
-          </button>
-          <button 
-              className="detalhes-btn detalhes-compartilhar" 
-              onClick={() => navigate(`/formando/${formando.id}/ver-mensagens`)}
-              >
-                  Ver Mensagens
-          </button>
-          <button 
-              className="detalhes-btn detalhes-compartilhar" 
-              onClick={() => navigate(`/formando/${formando.id}/compartilhar`)}
-              >
-                  Compartilhar
-          </button>
+          <button onClick={handleEnviar}>Enviar Mensagem</button>
+          <button onClick={() => navigate(`/${tipo}/${id}/ver-mensagens`)}>Ver Mensagens</button>
+          <button onClick={() => navigate(`/${tipo}/${id}/compartilhar`)}>Compartilhar</button>
         </div>
       </main>
 
-      <footer className="detalhes-footer">
-        © 2025 Powered by Dream Best
-      </footer>
+      <footer className="detalhes-footer">© 2025 Powered by Dream Best</footer>
     </div>
   );
 }

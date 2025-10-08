@@ -7,50 +7,74 @@ import avatar from "../assets/avatar.svg";
 export default function ListaFormandos() {
   const [busca, setBusca] = useState("");
 
-  const formandos = [
-    { id: 1, nome: "Fernanda Gomes" },
-    { id: 2, nome: "Carlos Rangel" },
-    { id: 3, nome: "Marcos AND Lima" },
-    { id: 4, nome: "Deivid" },
+  const dados = [
+    { id: 1, nome: "Fernanda Gomes", tipo: "formatura" },
+    { id: 2, nome: "Carlos Rangel", tipo: "formatura" },
+    { id: 3, nome: "Marcos AND Lima", tipo: "formatura" },
+    { id: 4, nome: "Deivid", tipo: "formatura" },
+    { id: 5, nome: "João Silva", tipo: "formatura" },
+    { id: 6, nomeNoivo: "Marcos", nomeNoiva: "Thais", tipo: "casamento" },
+    { id: 7, nomeNoivo: "Carlos", nomeNoiva: "Viviam", tipo: "casamento" },
+    { id: 8, nomeNoivo: "Pedro", nomeNoiva: "Mariana", tipo: "casamento" },
+    { id: 9, nome: "Tiago Alcantra", tipo: "aniversario" },
+    { id: 10, nome: "Lucas Pereira", tipo: "aniversario" },
   ];
 
-  const filtrados = formandos.filter(f =>
-    f.nome.toLowerCase().includes(busca.toLowerCase())
-  );
+  const filtrados = dados.filter((f) => {
+    const textoBusca = busca.toLowerCase();
+    if (f.tipo === "casamento") {
+      return (
+        f.nomeNoivo.toLowerCase().includes(textoBusca) ||
+        f.nomeNoiva.toLowerCase().includes(textoBusca)
+      );
+    }
+    return f.nome.toLowerCase().includes(textoBusca);
+  });
+
+  const renderNome = (f) => {
+    if (f.tipo === "casamento") {
+      return `${f.nomeNoivo} & ${f.nomeNoiva}`;
+    }
+    return f.nome;
+  };
 
   return (
     <div className="lista-container">
       <header className="lista-header">
         <img src={logob} alt="Dream Beast" className="lista-logo" />
       </header>
+
       <main className="lista-main">
         <div className="lista-pesquisa">
-          <label htmlFor="busca" className="lista-label">Busque o formado</label>
+          <label htmlFor="busca" className="lista-label">
+            Busque
+          </label>
           <div className="lista-input-group">
             <span className="lista-lupa">&#128269;</span>
             <input
               id="busca"
               type="text"
-              placeholder="Buscar o formado"
+              placeholder="Buscar nome"
               value={busca}
               onChange={(e) => setBusca(e.target.value)}
             />
           </div>
         </div>
+
         <ul className="lista-formandos-lista">
-          {filtrados.map((f, idx) => (
-            <li key={f.id || idx}>
-              <Link to={`/formando/${f.id}`} className="lista-formando-card">
+          {filtrados.map((f) => (
+            <li key={f.id}>
+              <Link to={`/${f.tipo}/${f.id}`} className={`lista-formando-card ${f.tipo}`}>
                 <img src={avatar} alt="Avatar" className="lista-avatar" />
-                <span className="lista-nome">{f.nome}</span>
+                <span className="lista-nome">{renderNome(f)}</span>
+                <span className={`lista-tipo ${f.tipo}`}>{f.tipo}</span>
               </Link>
             </li>
           ))}
         </ul>
       </main>
-      <footer className="lista-footer">
-        © 2025 Powered by Dream Best
-      </footer>
+
+      <footer className="lista-footer">© 2025 Powered by Dream Best</footer>
     </div>
   );
 }
