@@ -6,8 +6,11 @@
 [![CSS3](https://img.shields.io/badge/CSS3-blue?logo=css3&logoColor=white)](https://developer.mozilla.org/docs/Web/CSS)
 [![Node.js](https://img.shields.io/badge/Node.js-20.19.0-green?logo=node.js&logoColor=white)](https://nodejs.org/)
 
-
 O **Dream Beast Frontend** é um projeto desenvolvido com **React + Vite** para criar uma experiência rápida e interativa de mensagens à distância, celebrando momentos especiais mesmo quando estamos longe. Ideal para enviar mensagens, celebrar datas e compartilhar sentimentos com amigos, familiares ou colegas. 💌✨
+
+<div align="center">
+  <img alt="Welcome" height="250" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzk2YmtheGtnMnZxNGF0YWdnZmxkYTk2ZDhrNnEybDZvdDNteDltcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/djjNDzXg3eckyL1vYo/giphy.gif">
+</div>
 
 ---
 
